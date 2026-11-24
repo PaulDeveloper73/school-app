@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DPSI School Manager — a unified school management dashboard for students, staff, academics, attendance, finance, communication and school operations." />
+  <meta name="author" content="Kisakye Paul" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#071d49" />
+  <meta name="application-name" content="DPSI School Manager" />
+
+  <title>DPSI School Manager | School Management Dashboard</title>
+
+  <!-- Performance and font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23071d49'/%3E%3Cpath d='M12 34 32 20l20 14-20 14z' fill='%23fff'/%3E%3Cpath d='M19 23 32 8l13 15-13 5z' fill='%23fbbf24'/%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Sidebar navigation -->
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#dashboard" aria-label="DPSI School Manager home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img">
+            <path d="M8 31 32 14l24 17-24 17L8 31Z" fill="#fff" />
+            <path d="M19 22 32 7l13 15-13 5-13-5Z" fill="#fbbf24" />
+            <path d="M18 36c8 2 14 8 14 16 0-8 6-14 14-16v8c-7 2-11 6-14 12-3-6-7-10-14-12v-8Z" fill="#dbeafe" />
+            <path d="M20 21h24M32 9v12" stroke="#071d49" stroke-width="2.5" stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>DPSI</strong>
+          <small>School Manager</small>
+        </span>
+      </a>
+
+      <div class="sidebar-school-label">SCHOOL WORKSPACE</div>
+      <nav class="sidebar-nav">
+        <a class="nav-link active" href="#dashboard" aria-current="page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z" /></svg>
+          <span>Dashboard</span>
+        </a>
+        <a class="nav-link" href="#admissions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM19 8v6m3-3h-6" /></svg><span>Admissions</span><span class="nav-count">12</span></a>
+        <a class="nav-link" href="#students"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 8v8m-4-4h8" /></svg><span>Students</span></a>
+        <a class="nav-link" href="#staff"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4h-3M14 3.2a4 4 0 0 1 0 7.6M4 21v-2a4 4 0 0 1 4-4h3M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /></svg><span>Staff &amp; Teachers</span></a>
+
+        <div class="nav-section-label">ACADEMIC MANAGEMENT</div>
+        <a class="nav-link" href="#academics"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 8 10-5 10 5-10 5L2 8ZM6 10v6c3.5 3 8.5 3 12 0v-6M22 8v7" /></svg><span>Academics</span><svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></a>
+        <a class="nav-link" href="#attendance"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11 12 14 22 4M20 12v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12" /></svg><span>Attendance</span></a>
+        <a class="nav-link" href="#examinations"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" /></svg><span>Examinations</span><svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></a>
+        <a class="nav-link" href="#timetable"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2" /><path d="M16 2v4M8 2v4M3 10h18M8 14h2m4 0h2m-8 4h2" /></svg><span>Timetable</span></a>
+
+        <div class="nav-section-label">SCHOOL OPERATIONS</div>
+        <a class="nav-link" href="#finance"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="15" rx="2" /><path d="M2 10h20M16 15h2M6 2h12" /></svg><span>Fees &amp; Finance</span><svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></a>
+        <a class="nav-link" href="#communications"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-8-6 18-3-7-9-3Z" /><path d="m12 14 5-6" /></svg><span>Communications</span><span class="nav-dot"></span></a>
+        <a class="nav-link" href="#library"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z" /><path d="M4 17a2.5 2.5 0 0 1 2.5-2.5H20M8 6h7" /></svg><span>Library</span></a>
+        <a class="nav-link" href="#transport"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14l1-6-2-5H6l-2 5 1 6ZM3 11h18M7 17v2m10-2v2" /><circle cx="7.5" cy="14" r="1" /><circle cx="16.5" cy="14" r="1" /></svg><span>Transport</span></a>
+        <a class="nav-link" href="#boarding"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13M7 21v-8h10v8M9 16h6M9 8h.01M15 8h.01" /></svg><span>Boarding</span></a>
+        <a class="nav-link" href="#events"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2" /><path d="M16 2v4M8 2v4M3 10h18m3 4-2 2-2-2" /></svg><span>Events &amp; Activities</span></a>
+        <a class="nav-link" href="#inventory"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 7 9-4 9 4-9 4-9-4ZM3 7v10l9 4 9-4V7M12 11v10M7 5l9 4" /></svg><span>Inventory</span></a>
+
+        <div class="nav-section-label">INSIGHTS &amp; CONTROL</div>
+        <a class="nav-link" href="#reports"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h17M8 15v-4m5 4V7m5 8V3" /></svg><span>Reports &amp; Analytics</span><svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></a>
+        <a class="nav-link" href="#settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" /><path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.7a8 8 0 0 1-1.8 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.8-1l-1.7.7-1.4-2.4 1.4-1.1a7 7 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.7a8 8 0 0 1 1.8-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.8 1l1.7-.7 1.4 2.4-1.4 1.1a7 7 0 0 1 0 2Z" /></svg><span>Settings</span></a>
+      </nav>
+
+      <div class="sidebar-promo">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=520&q=85" alt="Students learning together in a classroom" />
+        <div class="promo-shade"></div>
+        <div class="promo-copy">
+          <span>Nurturing</span>
+          <strong>Future Leaders</strong>
+          <i aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <a class="logout-link" href="#logout">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 17 15 12 10 7M15 12H3M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6" /></svg>
+        <span>Sign Out</span>
+      </a>
+    </aside>
+
+    <!-- Main application area -->
+    <div class="app-main" id="app-main">
+      <header class="topbar">
+        <div class="topbar-brand">
+          <button class="icon-button menu-toggle" type="button" aria-label="Toggle navigation" data-action="toggle-sidebar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+          <div class="school-identity">
+            <strong>DPSI International School</strong>
+            <span>Learn <b>•</b> Grow <b>•</b> Excel</span>
+          </div>
+        </div>
+
+        <form class="global-search" role="search" action="#search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+          <input type="search" name="q" placeholder="Search students, staff, reports..." aria-label="Search students, staff and reports" />
+          <kbd>⌘ K</kbd>
+        </form>
+
+        <div class="topbar-actions">
+          <button class="term-selector" type="button" data-action="select-term">
+            <span class="term-indicator"></span>
+            <span>2026 / 2027</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+          </button>
+          <button class="icon-button notification-button" type="button" aria-label="Notifications" data-action="open-notifications">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg>
+            <span class="notification-count">3</span>
+          </button>
+          <div class="profile-menu">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&h=100&q=85" alt="Administrator profile" />
+            <div><strong>Paul Kisakye</strong><span>Administrator</span></div>
+            <button class="profile-chevron" type="button" aria-label="Open profile menu" data-action="profile-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg></button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Compact navigation shown on smaller screens -->
+      <nav class="mobile-nav" aria-label="Quick navigation">
+        <a class="is-active" href="#dashboard">Dashboard</a>
+        <a href="#students">Students</a>
+        <a href="#academics">Academics</a>
+        <a href="#attendance">Attendance</a>
+        <a href="#finance">Finance</a>
+        <a href="#reports">Reports</a>
+      </nav>
+
+      <main class="dashboard-content" id="dashboard">
+        <section class="welcome-banner" aria-labelledby="welcome-title">
+          <img class="welcome-image" src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=90" alt="Modern school campus building" />
+          <div class="welcome-overlay"></div>
+          <div class="welcome-content">
+            <span class="welcome-kicker">YOUR SCHOOL, CONNECTED</span>
+            <h1 id="welcome-title">Welcome to DPSI</h1>
+            <h2>School Management System</h2>
+            <p>Efficiently manage your entire school<br class="desktop-break" /> from one powerful platform.</p>
+            <a href="#system-guide" class="button button-yellow">Explore your dashboard <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="welcome-motto">Education<br />for a Better Tomorrow<i></i></div>
+          <div class="welcome-tag"><span class="live-dot"></span> School workspace active</div>
+        </section>
+
+        <section class="stat-grid" aria-label="School overview statistics">
+          <article class="stat-card stat-blue">
+            <div class="stat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 8v6m-3-3h6" /></svg></div>
+            <div class="stat-info"><span>Total Students</span><strong>750</strong><small><b>↑ 5%</b> vs last term</small></div>
+            <div class="stat-watermark" aria-hidden="true">750</div>
+          </article>
+          <article class="stat-card stat-green">
+            <div class="stat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 8v6m-3-3h6" /></svg></div>
+            <div class="stat-info"><span>Teaching Staff</span><strong>68</strong><small><b>↑ 2%</b> vs last term</small></div>
+            <div class="stat-watermark" aria-hidden="true">68</div>
+          </article>
+          <article class="stat-card stat-purple">
+            <div class="stat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v17H5.5A2.5 2.5 0 0 0 3 22V5.5ZM21 5.5A2.5 2.5 0 0 0 18.5 3H13v17h5.5a2.5 2.5 0 0 1 2.5 2V5.5Z" /></svg></div>
+            <div class="stat-info"><span>Classes / Streams</span><strong>24</strong><small><b>↑ 0%</b> vs last term</small></div>
+            <div class="stat-watermark" aria-hidden="true">24</div>
+          </article>
+          <article class="stat-card stat-orange">
+            <div class="stat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M16 3v4M8 3v4M3 10h18M8 14h3m-3 3h3m3-3h3" /></svg></div>
+            <div class="stat-info"><span>Attendance Rate</span><strong>96%</strong><small><b>↑ 1%</b> this month</small></div>
+            <div class="stat-watermark" aria-hidden="true">96%</div>
+          </article>
+        </section>
+
+        <section class="dashboard-grid dashboard-grid-primary" aria-label="Dashboard insights and actions">
+          <!-- Academic performance chart -->
+          <article class="panel performance-panel" id="academics">
+            <div class="panel-heading">
+              <div class="panel-title"><span class="heading-icon blue-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9m5 10V5m5 14v-7m5 7V3" /></svg></span><h2>Academic Performance</h2><button class="info-button" type="button" aria-label="About academic performance">i</button></div>
+              <button class="select-button" type="button" data-action="select-period">This Term <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg></button>
+            </div>
+            <div class="chart-legend">
+              <span><i class="legend-dot legend-blue"></i>Class A</span>
+              <span><i class="legend-dot legend-green"></i>Class B</span>
+              <span><i class="legend-dot legend-orange"></i>Class C</span>
+            </div>
+            <div class="chart-wrap" role="img" aria-label="Line chart showing monthly academic performance for Class A, Class B and Class C from January to June">
+              <svg class="performance-chart" viewBox="0 0 640 270" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="blueFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2f80ff" stop-opacity=".14"/><stop offset="1" stop-color="#2f80ff" stop-opacity="0"/></linearGradient>
+                  <linearGradient id="greenFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#16b86a" stop-opacity=".10"/><stop offset="1" stop-color="#16b86a" stop-opacity="0"/></linearGradient>
+                </defs>
+                <g class="chart-grid-lines"><path d="M52 25H625M52 70H625M52 115H625M52 160H625M52 205H625M52 250H625" /></g>
+                <g class="chart-axis-labels"><text x="7" y="29">100</text><text x="17" y="74">80</text><text x="17" y="119">60</text><text x="17" y="164">40</text><text x="17" y="209">20</text><text x="27" y="254">0</text></g>
+                <path class="chart-area-blue" d="M52 185 C95 171 113 145 167 105 S245 130 281 121 S363 110 397 105 S493 84 511 73 S587 55 625 37 L625 250H52Z" />
+                <path class="chart-area-green" d="M52 205 C100 197 131 177 167 162 S243 155 281 160 S357 145 397 142 S477 135 511 126 S591 116 625 109 L625 250H52Z" />
+                <path class="chart-line chart-line-blue" d="M52 185 C95 171 113 145 167 105 S245 130 281 121 S363 110 397 105 S493 84 511 73 S587 55 625 37" />
+                <path class="chart-line chart-line-green" d="M52 205 C100 197 131 177 167 162 S243 155 281 160 S357 145 397 142 S477 135 511 126 S591 116 625 109" />
+                <path class="chart-line chart-line-orange" d="M52 230 C103 218 129 207 167 195 S244 194 281 191 S363 184 397 178 S479 173 511 163 S590 151 625 145" />
+                <g class="chart-points-blue"><circle cx="52" cy="185" r="5"/><circle cx="167" cy="105" r="5"/><circle cx="281" cy="121" r="5"/><circle cx="397" cy="105" r="5"/><circle cx="511" cy="73" r="5"/><circle cx="625" cy="37" r="6"/></g>
+                <g class="chart-points-green"><circle cx="52" cy="205" r="5"/><circle cx="167" cy="162" r="5"/><circle cx="281" cy="160" r="5"/><circle cx="397" cy="142" r="5"/><circle cx="511" cy="126" r="5"/><circle cx="625" cy="109" r="5"/></g>
+                <g class="chart-months"><text x="52" y="269">Jan</text><text x="167" y="269">Feb</text><text x="281" y="269">Mar</text><text x="397" y="269">Apr</text><text x="511" y="269">May</text><text x="625" y="269">Jun</text></g>
+                <g class="chart-callout"><rect x="588" y="7" width="48" height="25" rx="8"/><text x="612" y="24" text-anchor="middle">92%</text></g>
+              </svg>
+            </div>
+            <div class="panel-footnote"><span><i class="status-indicator"></i> Results updated 2 hours ago</span><a href="#reports">View academic report <span>→</span></a></div>
+          </article>
+
+          <!-- Quick actions -->
+          <article class="panel quick-actions-panel">
+            <div class="panel-heading">
+              <div class="panel-title"><span class="heading-icon purple-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-3 8h7l-6 12 1-9H5l8-11Z" /></svg></span><h2>Quick Actions</h2></div>
+              <a class="text-link" href="#all-actions">See all <span>→</span></a>
+            </div>
+            <div class="quick-action-grid">
+              <a class="quick-action action-blue" href="#add-student"><span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 8v6m-3-3h6" /></svg></span><span>Add Student</span></a>
+              <a class="quick-action action-green" href="#record-attendance"><span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3M8 3v4h4M8 3l4 4m-6 6 3 3 6-7m2-7 4 4m-7 0 5-5" /></svg></span><span>Record<br />Attendance</span></a>
+              <a class="quick-action action-purple" href="#create-timetable"><span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18m3 4-2 2-2-2" /></svg></span><span>Create<br />Timetable</span></a>
+              <a class="quick-action action-orange" href="#manage-fees"><span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="10" cy="5" rx="7" ry="3"/><path d="M3 5v5c0 1.7 3.1 3 7 3 1.3 0 2.5-.2 3.5-.5M3 10v5c0 1.7 3.1 3 7 3h1m-8-8c0 1.7 3.1 3 7 3m3-1 5-3 5 3-5 3-5-3Zm0 0v5l5 3 5-3v-5m-5 8v-5" /></svg></span><span>Manage Fees</span></a>
+              <a class="quick-action action-red" href="#reports"><span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M14 2v6h6M8 13h8M8 17h8" /></svg></span><span>View Reports</span></a>
+              <a class="quick-action action-cyan" href="#examinations"><span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16v18H4zM8 7h8M8 11h5m-5 4h4m4 1 2 2 4-5" /></svg></span><span>Manage<br />Exams</span></a>
+              <a class="quick-action action-indigo" href="#transport"><span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14l1-6-2-5H6l-2 5 1 6ZM3 11h18M7 17v2m10-2v2"/><circle cx="7.5" cy="14" r="1"/><circle cx="16.5" cy="14" r="1"/></svg></span><span>Track<br />Transport</span></a>
+              <a class="quick-action action-teal" href="#communications"><span class="action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg></span><span>Send Notice</span></a>
+            </div>
+          </article>
+
+          <!-- Notifications -->
+          <article class="panel notifications-panel" id="communications">
+            <div class="panel-heading">
+              <div class="panel-title"><span class="heading-icon blue-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg></span><h2>Notifications</h2><span class="unread-badge">3</span></div>
+              <a class="text-link" href="#all-notifications">View all <span>→</span></a>
+            </div>
+            <div class="notification-list">
+              <a class="notification-item" href="#admissions"><i class="notice-dot dot-orange"></i><span class="notice-copy"><strong>New admission request</strong><small>From Marian Nabirye</small></span><time>2m ago</time></a>
+              <a class="notification-item" href="#finance"><i class="notice-dot dot-green"></i><span class="notice-copy"><strong>Fees payment received</strong><small>UGX 500,000</small></span><time>15m ago</time></a>
+              <a class="notification-item" href="#examinations"><i class="notice-dot dot-blue"></i><span class="notice-copy"><strong>Exam results uploaded</strong><small>Form Two</small></span><time>1h ago</time></a>
+            </div>
+            <div class="notifications-footer"><span>You're all caught up for now</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg></div>
+          </article>
+        </section>
+
+        <section class="dashboard-grid dashboard-grid-secondary" aria-label="School operations summary">
+          <!-- Upcoming events -->
+          <article class="panel events-panel" id="events">
+            <div class="panel-heading">
+              <div class="panel-title"><span class="heading-icon blue-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18m4 4h.01"/></svg></span><h2>Upcoming Events</h2></div>
+              <a class="text-link" href="#calendar">View all <span>→</span></a>
+            </div>
+            <div class="event-list">
+              <a class="event-item" href="#event-exams">
+                <span class="event-date event-blue"><b>DEC</b><strong>05</strong><small>Fri</small></span>
+                <span class="event-details"><strong>End of Term Examinations</strong><small>Senior One – Senior Six</small><em><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 8:00 AM – 4:00 PM</em></span>
+              </a>
+              <a class="event-item" href="#event-parents">
+                <span class="event-date event-purple"><b>DEC</b><strong>12</strong><small>Fri</small></span>
+                <span class="event-details"><strong>Parents' Meeting</strong><small>School Auditorium</small><em><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 2:00 PM – 5:00 PM</em></span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Fees and finance -->
+          <article class="panel fees-panel" id="finance">
+            <div class="panel-heading">
+              <div class="panel-title"><span class="heading-icon orange-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v3m0 14v3M5 5l2 2m10 10 2 2M2 12h3m14 0h3M5 19l2-2m10-10 2-2"/><circle cx="12" cy="12" r="7"/><path d="M14.5 9.5c-.5-1-1.4-1.5-2.5-1.5-1.4 0-2.5.8-2.5 2s1.1 2 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2c-1.1 0-2-.5-2.5-1.5M12 6v12"/></svg></span><h2>Fee Collection Overview</h2></div>
+              <button class="select-button" type="button" data-action="select-fee-period">This Term <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg></button>
+            </div>
+            <div class="fee-content">
+              <div class="fee-donut" role="img" aria-label="78 percent of school fees collected"><div class="donut-center"><strong>78%</strong><span>Collected</span></div></div>
+              <div class="fee-breakdown">
+                <div class="fee-line"><i class="fee-dot collected"></i><span><small>Collected</small><strong>UGX 312,500,000</strong></span></div>
+                <div class="fee-line"><i class="fee-dot pending"></i><span><small>Pending</small><strong>UGX 87,500,000</strong></span></div>
+                <a href="#fee-details" class="button button-green">View details <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+            <div class="fee-footnote"><span>Target: UGX 400,000,000</span><span>Updated today</span></div>
+          </article>
+
+          <!-- Student summary -->
+          <article class="panel student-summary-panel" id="students">
+            <div class="panel-heading">
+              <div class="panel-title"><span class="heading-icon blue-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 8v6m-3-3h6" /></svg></span><h2>Student Summary</h2></div>
+              <a class="text-link" href="#student-directory">View all <span>→</span></a>
+            </div>
+            <div class="student-stats">
+              <div class="student-stat"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=110&h=110&q=85" alt="Student portrait" /><strong>458</strong><span>Boys</span></div>
+              <div class="student-stat"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=110&h=110&q=85" alt="Student portrait" /><strong>292</strong><span>Girls</span></div>
+              <div class="student-stat"><img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=110&h=110&q=85" alt="Students together" /><strong>750</strong><span>Total</span></div>
+            </div>
+            <div class="student-summary-footer"><span>Enrolment this academic year</span><strong>+ 36 new students</strong></div>
+          </article>
+        </section>
+
+        <!-- System capability strip -->
+        <section class="system-highlights" id="system-guide" aria-labelledby="system-highlights-title">
+          <div class="highlights-main">
+            <div class="highlights-heading"><span>✦</span><h2 id="system-highlights-title">A smarter way to run your school</h2><small>Everything connected. Every decision informed.</small></div>
+            <div class="highlight-features">
+              <div class="feature-item"><span class="feature-icon feature-teal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3Z"/><path d="m8 12 3 3 5-6"/></svg></span><strong>Secure &amp; Reliable</strong><small>Your data is protected</small></div>
+              <div class="feature-item"><span class="feature-icon feature-blue"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a5 5 0 0 1-.5-10A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9H7Z"/></svg></span><strong>Cloud Ready</strong><small>Access anywhere</small></div>
+              <div class="feature-item"><span class="feature-icon feature-indigo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13v-2a8 8 0 0 1 16 0v2M4 13H3a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h3v-7H4Zm16 0h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-3v-7h2ZM17 20c-1 1-2.5 1.5-5 1.5"/></svg></span><strong>Helpful Support</strong><small>Here when you need us</small></div>
+              <div class="feature-item"><span class="feature-icon feature-orange"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-3 8h7l-6 12 1-9H5l8-11Z"/></svg></span><strong>Fast &amp; Efficient</strong><small>Less admin, more impact</small></div>
+              <div class="feature-item"><span class="feature-icon feature-purple"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/></svg></span><strong>Powerful Reports</strong><small>Make informed decisions</small></div>
+            </div>
+          </div>
+          <div class="highlights-promo">
+            <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=780&q=85" alt="Students working together at school" />
+            <div class="highlights-promo-overlay"></div>
+            <div class="highlights-promo-copy"><span>Building</span><strong>A Brighter Future</strong><a href="#about-school">Discover DPSI <span>→</span></a></div>
+          </div>
+        </section>
+
+        <footer class="dashboard-footer">
+          <span>© 2026 DPSI International School. All rights reserved.</span>
+          <span><i class="footer-status"></i> All systems operational <b>•</b> Last synced just now</span>
+        </footer>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
