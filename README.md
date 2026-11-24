@@ -12,6 +12,8 @@ The project currently ships as an **interactive front-end demonstration** built 
 
 ## Product preview
 
+[**View School App– Live Application**](https://pauldeveloper73.github.io/school-app//)
+
 ![DPSI School Manager dashboard preview](assets/dashboard-preview.png)
 
 The interface uses a navy-and-blue school identity, a responsive sidebar, a workspace header, dashboard summaries, academic performance visualisation, operational shortcuts, notifications, events and finance snapshots. The individual modules use the same visual system for a consistent user experience.
