@@ -1835,4 +1835,12 @@ The final outcome must be a professionally engineered school management platform
 
 Begin with the complete project audit, then proceed through the implementation phases until all agreed production release gates have been satisfied.
 
+My three most important recommendations
+1. Prioritise the backend foundation first. Authentication, permissions, database relationships, audit logs and backups must be reliable before real student and financial information is introduced.
+
+2. Pay special attention to finance and examinations. Incorrect fee balances or examination results can seriously affect school operations. These modules need rigorous business-rule validation and reconciliation.
+
+3. Build for multiple schools from the beginning. Even when DPSI is the first deployment, a properly isolated school architecture will make it much easier to offer the product to other schools later.
+
+The key distinction is that you are building both a school operations product and a potential commercial software offering. Its value will come from reliable interconnected workflows, not simply the number of menu items.
 END OF MASTER DEVELOPMENT PROMPT.

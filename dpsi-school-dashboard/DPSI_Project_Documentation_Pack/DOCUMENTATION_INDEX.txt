@@ -1,0 +1,37 @@
+DPSI SCHOOL MANAGER — COMPLETE PROJECT DOCUMENTATION PACK
+Version 1.0 | Prepared 24 November 2026
+
+START HERE
+README.md — pack overview, reading order, use of workbook, prototype status, governance and production launch rules.
+
+EDITABLE WORD DOCUMENTS
+01_DPSI_School_Manager_Master_Product_and_Requirements_Handbook.docx
+  Product charter, problem/opportunity hypothesis, scope, capabilities, limitations, benefits, users/roles, workflows, complete 146-feature register, 15 NFRs, risks and decisions.
+
+02_DPSI_School_Manager_Technical_Architecture_Security_and_Privacy.docx
+  Proposed architecture, environments, data entities, integrity constraints, API standards, security/privacy controls, Uganda regulatory review, integration model and architecture approvals.
+
+03_DPSI_School_Manager_QA_UAT_and_GoLive_Acceptance_Plan.docx
+  QA strategy, 18 QA acceptance tests, department UAT scenarios, defect severity, evidence, RACI, 15 production go-live gates and release sign-off.
+
+04_DPSI_School_Manager_User_Administration_and_Operations_Handbook.docx
+  Proposed role guidance, SOPs, operating routines, data migration, user lifecycle, deployment, backup/restore, incident handling, support, training and handover.
+
+05_DPSI_School_Manager_Product_Overview_and_Client_Brief.docx
+  Client-facing product narrative, problem, capabilities, benefits, deployment stages, honest maturity statement, discovery agenda, lead qualification and contact placeholders.
+
+06_DPSI_School_Manager_Project_Governance_Forms_and_Templates.docx
+  Reusable forms for scope approval, department UAT, migration acceptance, privacy review, change requests, incidents, go-live approval and decisions.
+
+LIVE PROJECT CONTROL REGISTER
+registers/DPSI_School_Manager_Project_Control_Workbook.xlsx
+  146 features, 15 NFRs, 11 proposed roles, 18 QA tests, 9 risks, 8 decisions, 15 go-live gates and 8 integration records.
+
+REFERENCE FILES
+reference/DPSI_School_Manager_Development_Tracker.docx — original source feature tracker.
+reference/Original_Project_README.md — previous project README.
+reference/dpsi-school-manager-full-project.zip — current browser-only prototype source.
+reference/dashboard-preview.png — approved visual direction.
+
+CRITICAL STATUS
+This package is a product and delivery specification. It does not implement or certify the product. The current application baseline is a browser-only front-end prototype using localStorage. Do not use it to store real student, guardian, medical, safeguarding, staff or financial information. Production use requires implementation, external provider setup, security/privacy/legal review, tested backup and restore, QA, department UAT and signed GO-001–GO-015 approval.

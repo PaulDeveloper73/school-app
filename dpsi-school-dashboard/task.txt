@@ -1,0 +1,1845 @@
+
+## DPSI School Manager — Complete Production Implementation & Enhancement
+
+**Project:** DPSI School Manager  
+**Project Owner:** Kisakye Paul  
+**Product Category:** Enterprise School Management Information System (School ERP)  
+**Target Market:** Private schools, international schools, day schools and boarding schools  
+**Project Objective:** Transform the existing application into a complete, secure, scalable, multi-user school management platform that is production-ready.
+
+---
+
+# 1. YOUR ROLE AND RESPONSIBILITY
+
+Act as a Principal Software Architect, Senior Full-Stack Engineer, Database Architect, UI/UX Engineer, Cybersecurity Specialist, QA Automation Engineer and DevOps Engineer.
+
+You are responsible for examining, enhancing, completing, testing and delivering the entire existing DPSI School Manager application.
+
+Your assignment is NOT to create another school management dashboard, a new demonstration application or isolated sample pages.
+
+Your assignment is to take the existing application and turn it into a fully functional, professionally engineered school management system capable of supporting the actual day-to-day operations of a real educational institution.
+
+You must work with the existing codebase, preserve its approved visual identity and expand its functionality according to the supplied Development Tracker.
+
+**Your ultimate objective is to deliver a complete application in which all agreed modules, features, workflows, permissions, database operations, integrations and reports work together correctly.**
+
+Do not stop after creating a development plan. Inspect the source code, implement the features, integrate the system, run tests, resolve errors and deliver the completed project.
+
+# 2. MANDATORY PROJECT FILE REVIEW
+
+Before modifying any source code, thoroughly inspect the following:
+
+1. Existing `index.html`.
+2. Existing `style.css`.
+3. Existing `app.js`.
+4. All SVG, PNG and other assets.
+5. Existing `README.md`.
+6. The supplied `DPSI_School_Manager_Development_Tracker.docx`.
+7. Existing database, configuration and deployment files, if present.
+
+Understand the existing application architecture, navigation, module rendering, data structures, event listeners, forms, tables, CSS components and interactions.
+
+The Development Tracker is the primary functional specification.
+
+The existing source code is the implementation baseline.
+
+The README is the existing project documentation.
+
+Do not assume a feature is production-ready simply because a button, table or screen already exists.
+
+Conduct a source-code audit and classify every requirement as:
+
+- Implemented and verified.
+- Implemented but incomplete.
+- Visually implemented only.
+- Not implemented.
+- Requires external integration.
+- Requires school policy or stakeholder approval.
+
+Preserve existing working functionality while improving incomplete areas.
+
+Do not delete working project components unnecessarily.
+
+# 3. VISUAL DESIGN — PRESERVE THE APPROVED UI
+
+The existing application has an approved dashboard design. Preserve this design throughout the entire application.
+
+The application must retain its recognizable DPSI visual identity.
+
+### Design requirements
+
+- Deep navy blue sidebar.
+- Bright blue primary action buttons.
+- White and very light blue backgrounds.
+- Professional dashboard cards.
+- Rounded corners and subtle shadows.
+- Modern typography.
+- Consistent icons.
+- Clean data tables.
+- Professional forms and modal dialogs.
+- Consistent spacing and alignment.
+- Responsive sidebar.
+- Mobile-friendly navigation.
+- Clear status indicators.
+- Elegant charts and data visualisations.
+
+Use the existing design reference and assets.
+
+Do not introduce a completely different theme.
+
+### UI/UX expectations
+
+Every module must have a consistent professional layout.
+
+Each page should include:
+
+- Page title and helpful description.
+- Breadcrumb navigation where appropriate.
+- Relevant summary statistics.
+- Primary action buttons.
+- Search and filtering controls.
+- Structured data tables.
+- Pagination.
+- Record details.
+- Create/edit forms.
+- Clear empty states.
+- Loading indicators.
+- Error and success notifications.
+- Confirmation dialogs for destructive operations.
+- Relevant export and print actions.
+
+Avoid overcrowded dashboards and unnecessarily complicated forms.
+
+Frequently used school operations should be accessible in as few steps as reasonably possible.
+
+Prioritise usability for administrators, teachers and school support staff who may not be technically experienced.
+
+# 4. PRODUCTION TECHNOLOGY ARCHITECTURE
+
+The current project uses HTML5, CSS3 and Vanilla JavaScript with browser-based demonstration data.
+
+This must evolve into a proper client-server application with persistent database storage.
+
+First inspect the existing code and determine the most suitable architecture.
+
+### Preferred implementation direction
+
+Unless the existing repository or actual hosting environment requires otherwise, favour:
+
+- Frontend: Preserve the existing HTML5, CSS3 and Vanilla JavaScript interface initially.
+- Backend: Laravel with a currently supported PHP release.
+- Database: MySQL 8+ or compatible MariaDB version.
+- API: Versioned REST API using JSON.
+- Authentication: Secure server-side authentication and session management.
+- Database access: ORM and prepared queries.
+- File storage: Private server-side storage.
+- Background processing: Queue-based email, SMS and notification processing.
+- Deployment: Configurable local, staging and production environments.
+
+You may recommend a different architecture if the existing deployment environment justifies it. Document the decision and explain the advantages.
+
+Do not migrate the frontend to React, Next.js or another framework merely for preference. Preserve the existing UI and only introduce a different frontend architecture when it provides a clear technical benefit.
+
+### Architecture requirements
+
+Implement a proper separation of:
+
+1. Presentation layer.
+2. Application/business logic.
+3. API/controllers.
+4. Authentication and authorisation.
+5. Database models and relationships.
+6. Validation.
+7. External integrations.
+8. File handling.
+9. Reporting.
+10. Logging and auditing.
+
+The browser must never be the authority for sensitive business decisions.
+
+Move production data operations away from `localStorage` and into the authenticated backend and database.
+
+Use browser storage only for non-sensitive preferences or temporary UI state.
+
+Do not store real passwords, access tokens, financial information or confidential student information in browser localStorage.
+
+# 5. COMPLETE APPLICATION MODULES
+
+Implement all 17 application destinations as fully functional modules.
+
+Every module must have its own complete user interface, backend operations, database relationships, validation, permissions, reports and relevant workflows.
+
+## MODULE 01: DASHBOARD
+
+Feature IDs: DASH-001 to DASH-006.
+
+Build an intelligent school-wide dashboard.
+
+Required features:
+
+- Total student statistics.
+- Total staff statistics.
+- Class and stream statistics.
+- Attendance overview.
+- Admission statistics.
+- Academic performance charts.
+- Fee collection overview.
+- Pending fee balances.
+- Recent payments.
+- Upcoming events.
+- Recent announcements.
+- Operational notifications.
+- Recent school activities.
+- Quick actions.
+- Role-specific dashboards.
+
+All statistics must come from real database records.
+
+Provide filters for academic year, term, campus and other relevant reporting periods.
+
+Allow administrators to drill down from summary statistics into the underlying records.
+
+Never display hardcoded demonstration statistics in the production environment.
+
+## MODULE 02: ADMISSIONS
+
+Feature IDs: ADM-001 to ADM-007.
+
+Build a complete student admissions management system.
+
+Required features:
+
+- Online application submission.
+- Applicant registration.
+- Guardian information.
+- Applicant profile management.
+- Application reference numbers.
+- Application document uploads.
+- Admission requirements.
+- Interview scheduling.
+- Admission assessment records.
+- Application status tracking.
+- Application approval and rejection.
+- Admission capacity management.
+- Duplicate applicant detection.
+- Admission notifications.
+- Application history.
+- Admission reporting.
+
+Application statuses should include:
+
+- Pending.
+- Under Review.
+- Interview Scheduled.
+- Approved.
+- Rejected.
+- Waitlisted.
+- Enrolled.
+
+Provide an approval workflow.
+
+When an application is approved, the system must create the student record exactly once, preserve the application relationship and avoid duplicate admissions when the action is repeated.
+
+## MODULE 03: STUDENTS
+
+Feature IDs: STU-001 to STU-008.
+
+Create a comprehensive student information management system.
+
+Required features:
+
+- Student registration.
+- Unique student admission numbers.
+- Student profiles.
+- Student photographs.
+- Personal information.
+- Guardian information.
+- Multiple guardian relationships.
+- Emergency contacts.
+- Class and stream allocation.
+- Student documents.
+- Academic history.
+- Attendance history.
+- Examination history.
+- Fee statements.
+- Medical and emergency information.
+- Safeguarding information.
+- Student transfers.
+- Student promotion.
+- Student suspension.
+- Student withdrawal.
+- Graduation and alumni records.
+- Bulk student imports.
+- Student document exports.
+
+Allow authorised users to view a student's complete history from one profile.
+
+Sensitive health and safeguarding information must have separate permissions and audit logging.
+
+Never expose confidential student records to unauthorised users.
+
+## MODULE 04: STAFF & TEACHERS
+
+Feature IDs: HR-001 to HR-006.
+
+Build a complete staff management and HR module.
+
+Required features:
+
+- Staff registration.
+- Employee identification numbers.
+- Staff profiles.
+- Departments.
+- Job titles.
+- Employment contracts.
+- Qualifications.
+- Professional documents.
+- Next-of-kin information.
+- Emergency contacts.
+- Staff attendance.
+- Leave applications.
+- Leave approvals.
+- Leave balances.
+- Teacher subject allocations.
+- Class responsibilities.
+- Teacher workloads.
+- Staff substitutions.
+- Payroll references.
+- Payslip integration.
+- Staff self-service.
+
+Restrict employment, bank and payroll information to specifically authorised personnel.
+
+## MODULE 05: ACADEMICS
+
+Feature IDs: ACAD-001 to ACAD-007.
+
+Create a complete academic administration module.
+
+Required features:
+
+- Academic year management.
+- Term management.
+- Classes.
+- Streams.
+- Departments.
+- Subjects.
+- Subject categories.
+- Subject codes.
+- Class capacities.
+- Classroom allocation.
+- Teacher allocation.
+- Subject-to-class relationships.
+- Curriculum management.
+- Syllabus mapping.
+- Schemes of work.
+- Academic calendars.
+- School holidays.
+- Promotion management.
+- Student class history.
+
+Ensure academic records are associated with the correct academic year and term.
+
+Historical academic records must remain accessible even after a new academic year begins.
+
+Support the school's approved curriculum and configurable grading policies.
+
+## MODULE 06: ATTENDANCE
+
+Feature IDs: ATT-001 to ATT-008.
+
+Implement a complete student and staff attendance system.
+
+Required features:
+
+- Daily attendance.
+- Class attendance.
+- Lesson-based attendance.
+- Student attendance register.
+- Staff attendance.
+- Present, absent, late and excused statuses.
+- Bulk attendance marking.
+- Attendance corrections.
+- Attendance approval where required.
+- Attendance history.
+- Class attendance reports.
+- Individual student attendance reports.
+- Attendance percentage calculations.
+- Chronic absenteeism alerts.
+- Parent/guardian absence notifications.
+- Attendance exports.
+- Optional attendance-device integration.
+
+Attendance must be stored against the correct date, class and session.
+
+Prevent duplicate attendance records for the same student and session.
+
+Any correction to a previously submitted register must preserve an audit history.
+
+## MODULE 07: EXAMINATIONS & RESULTS
+
+Feature IDs: EXAM-001 to EXAM-007.
+
+Build a complete examinations and student assessment system.
+
+Required features:
+
+- Examination creation.
+- Examination schedules.
+- Assessment categories.
+- Subject-based examinations.
+- Class-based examinations.
+- Maximum marks.
+- Mark entry.
+- Grade boundaries.
+- Grading scales.
+- Weighted assessments.
+- Teacher mark submission.
+- Result moderation.
+- Result approval.
+- Result publication.
+- Academic performance analytics.
+- Subject averages.
+- Class averages.
+- Student performance history.
+- Report card generation.
+- Academic transcripts.
+- Teacher comments.
+- Headteacher comments.
+- Parent result access.
+- Student result access.
+
+All grading calculations must follow configurable school-approved policies.
+
+Published results must not be changed silently. Changes must require appropriate permissions and retain previous values in the audit history.
+
+Generate professional, printable and downloadable report cards.
+
+## MODULE 08: TIMETABLE
+
+Feature IDs: TT-001 to TT-006.
+
+Implement complete timetable management.
+
+Required features:
+
+- Weekly timetable.
+- Daily timetable.
+- Class timetable.
+- Teacher timetable.
+- Subject allocation.
+- Classroom allocation.
+- Lesson scheduling.
+- Period management.
+- Timetable editing.
+- Timetable duplication.
+- Timetable versioning.
+- Teacher substitution.
+- Timetable publishing.
+- Timetable distribution.
+
+Implement conflict detection.
+
+The system must detect:
+
+- One teacher scheduled in two places at the same time.
+- One class assigned to overlapping lessons.
+- One classroom assigned to multiple lessons.
+- Invalid period assignments.
+- Teacher workload conflicts.
+
+Do not allow timetable conflicts to be saved without an explicitly authorised resolution process.
+
+## MODULE 09: FEES & FINANCE
+
+Feature IDs: FIN-001 to FIN-009.
+
+This is a critical module. Implement it with proper financial accounting principles.
+
+Required features:
+
+- Fee structure management.
+- Fee categories.
+- Tuition fees.
+- Boarding fees.
+- Transport fees.
+- Other school charges.
+- Class-specific fees.
+- Term-based billing.
+- Automatic invoice generation.
+- Student invoices.
+- Invoice numbers.
+- Partial payments.
+- Full payments.
+- Outstanding balances.
+- Payment allocation.
+- Discounts.
+- Scholarships.
+- Bursaries.
+- Instalment plans.
+- Fee waivers.
+- Receipts.
+- Parent statements.
+- Student account histories.
+- Overdue payment tracking.
+- Debtor ageing reports.
+- Refunds.
+- Payment reversals.
+- Finance approvals.
+- Daily cash reconciliation.
+- Financial reports.
+- Payment gateway integration.
+- Mobile money integration.
+- Bank payment reconciliation.
+
+### Financial integrity requirements
+
+Use a proper financial transaction model.
+
+Implement:
+
+- Unique transaction references.
+- Unique receipt numbers.
+- Payment allocation records.
+- Immutable transaction history.
+- Database transactions.
+- Duplicate payment prevention.
+- Idempotent payment processing.
+- Refund and reversal records.
+- Reconciliation reports.
+- Approval workflows.
+- Audit trails.
+
+Never rely on a simple editable balance field as the source of financial truth.
+
+Outstanding balances must be derived from the underlying invoices, payments, adjustments and approved reversals.
+
+Integrate actual payment providers only after the school confirms its merchant accounts and credentials.
+
+Never simulate a successful live payment.
+
+## MODULE 10: COMMUNICATIONS
+
+Feature IDs: COM-001 to COM-007.
+
+Build a school-wide communication platform.
+
+Required features:
+
+- Announcements.
+- News and notices.
+- Parent messages.
+- Student messages.
+- Staff announcements.
+- Class-specific communication.
+- Email notifications.
+- SMS notifications.
+- In-app notifications.
+- Communication templates.
+- Recipient selection.
+- Message scheduling.
+- Delivery tracking.
+- Failed delivery records.
+- Retry mechanisms.
+- Notification history.
+- Consent and communication preferences.
+- Read/unread status.
+
+Create a background messaging queue.
+
+Implement delivery callbacks where supported by providers.
+
+Prevent unauthorised recipients from receiving private student or financial information.
+
+## MODULE 11: LIBRARY
+
+Feature IDs: LIB-001 to LIB-005.
+
+Build a complete library management system.
+
+Required features:
+
+- Book catalogue.
+- ISBN.
+- Book categories.
+- Authors.
+- Publishers.
+- Book copies.
+- Copy availability.
+- Student borrowing.
+- Staff borrowing.
+- Book reservations.
+- Book issuing.
+- Book returns.
+- Loan history.
+- Due dates.
+- Overdue books.
+- Fine calculations.
+- Borrowing restrictions.
+- Barcode or QR support.
+- Library reports.
+- Stocktaking.
+
+Maintain an independent loan transaction ledger.
+
+Never allow issuing a book when no eligible copy is available.
+
+## MODULE 12: TRANSPORT
+
+Feature IDs: TRN-001 to TRN-005.
+
+Implement school transport management.
+
+Required features:
+
+- Vehicle registration.
+- Vehicle records.
+- Drivers.
+- Driver documents.
+- Vehicle insurance.
+- Inspection details.
+- Maintenance records.
+- Transport routes.
+- Pickup points.
+- Drop-off points.
+- Student route allocation.
+- Route charges.
+- Route capacity.
+- Student transport lists.
+- Trip records.
+- Transport alerts.
+- Route changes.
+- Parent notifications.
+- Optional GPS tracking.
+
+Prevent vehicle and route capacity from being exceeded without an authorised override.
+
+## MODULE 13: BOARDING
+
+Feature IDs: BRD-001 to BRD-005.
+
+Build a complete boarding school management module.
+
+Required features:
+
+- Boarding houses.
+- Dormitories.
+- Rooms.
+- Beds.
+- Bed allocation.
+- Student occupancy.
+- Boarding fees.
+- Daily roll call.
+- Student check-in.
+- Student check-out.
+- Weekend leave.
+- Leave applications.
+- Leave approval.
+- Guardian notifications.
+- Boarding staff.
+- Welfare records.
+- Incident management.
+- Boarding reports.
+
+Implement room and bed capacity validation.
+
+Prevent two active students from occupying the same bed.
+
+Strictly restrict health, welfare and safeguarding information.
+
+## MODULE 14: EVENTS & ACTIVITIES
+
+Feature IDs: EVT-001 to EVT-005.
+
+Required features:
+
+- School events.
+- Academic events.
+- Sports events.
+- Cultural events.
+- Meetings.
+- Educational trips.
+- School calendar.
+- Event categories.
+- Event registration.
+- Participant lists.
+- Student attendance.
+- Guardian consent forms.
+- Trip permissions.
+- Event reminders.
+- Calendar printing.
+- Calendar exports.
+- Portal event publishing.
+
+## MODULE 15: INVENTORY & ASSETS
+
+Feature IDs: INV-001 to INV-006.
+
+Implement a comprehensive school inventory and asset management module.
+
+Required features:
+
+- Inventory categories.
+- Stock items.
+- Asset register.
+- Asset identification numbers.
+- Item quantities.
+- Stock locations.
+- Stock increases.
+- Stock reductions.
+- Stock transfers.
+- Low-stock alerts.
+- Reorder thresholds.
+- Suppliers.
+- Purchase requisitions.
+- Purchase orders.
+- Procurement approvals.
+- Goods received.
+- Asset assignments.
+- Asset maintenance.
+- Repairs.
+- Asset disposal.
+- Stocktaking.
+- Stock movement history.
+- Inventory reports.
+
+Every stock adjustment must record the quantity, user, reason and date.
+
+Prevent negative stock balances.
+
+## MODULE 16: REPORTS & ANALYTICS
+
+Feature IDs: RPT-001 to RPT-006.
+
+Create a powerful reporting and analytics centre.
+
+Required reports:
+
+- Student enrolment.
+- Admissions.
+- Student demographics.
+- Student attendance.
+- Staff attendance.
+- Staff records.
+- Academic performance.
+- Examination results.
+- Class performance.
+- Subject performance.
+- Timetable.
+- Fee collection.
+- Outstanding fees.
+- Debtor ageing.
+- Payment transactions.
+- Financial summaries.
+- Library borrowing.
+- Transport allocation.
+- Boarding occupancy.
+- Events.
+- Inventory.
+- Asset management.
+- School-wide operational reports.
+
+Report requirements:
+
+- Date filters.
+- Academic year filters.
+- Term filters.
+- Class and stream filters.
+- Campus filters.
+- Status filters.
+- Search.
+- CSV export.
+- PDF export.
+- Print-friendly layout.
+- Branded reports.
+- Scheduled reports.
+- Email distribution where authorised.
+- Charts and trend analysis.
+- Drill-down into source records.
+
+All report totals must reconcile with their respective source data.
+
+Never show fabricated analytics.
+
+## MODULE 17: SETTINGS & ADMINISTRATION
+
+Feature IDs: SET-001 to SET-008.
+
+Build a complete system administration area.
+
+Required features:
+
+- School profile.
+- School logo.
+- School contact information.
+- Address.
+- Academic year configuration.
+- Term configuration.
+- Currency.
+- Timezone.
+- Campus management.
+- School branding.
+- User accounts.
+- User activation and deactivation.
+- Password resets.
+- Roles.
+- Permissions.
+- Role assignments.
+- Audit logs.
+- Security configuration.
+- Backup management.
+- Data restoration.
+- Data retention.
+- System preferences.
+- Notification settings.
+- Integration settings.
+- School configuration.
+
+Sensitive configuration changes must be authorised and audited.
+
+# 6. ADDITIONAL USER PORTALS
+
+In addition to the 17 main modules, implement separate role-based experiences.
+
+### Administrator portal
+
+Complete school-wide operational management and oversight.
+
+### Teacher portal
+
+Teachers should be able to:
+
+- View assigned classes.
+- View assigned subjects.
+- Access timetables.
+- Mark attendance.
+- Enter marks.
+- Submit results.
+- View assigned student information.
+- Manage permitted academic records.
+- Receive school announcements.
+
+### Parent/guardian portal
+
+Parents must be able to:
+
+- View only their verified linked children.
+- View student profiles.
+- View attendance.
+- View published examination results.
+- Download report cards.
+- View fee statements.
+- View payment history.
+- Download receipts.
+- Receive notices.
+- View school events.
+- View transport information where enabled.
+- Receive school notifications.
+
+### Student portal
+
+Students should be able to:
+
+- View personal profiles.
+- View class timetables.
+- View published results.
+- Download report cards.
+- View attendance.
+- Receive school announcements.
+- View relevant school events.
+- Access assignments or learning resources where enabled.
+
+Every portal must enforce server-side access controls.
+
+Never allow a parent or student to access another learner's information by manipulating URLs or record IDs.
+
+# 7. USER AUTHENTICATION, ROLES & PERMISSIONS
+
+Feature IDs: PLAT-007, SEC-001 and SEC-002.
+
+Implement a robust authentication and authorisation system.
+
+Support these proposed roles:
+
+1. Platform Owner / System Operator.
+2. School Administrator / Headteacher.
+3. Admissions Officer / Registrar.
+4. Teacher / Class Teacher.
+5. Bursar / Finance Officer.
+6. HR / Staff Administrator.
+7. Librarian.
+8. Transport Officer.
+9. Boarding Staff / House Parent.
+10. Parent / Guardian.
+11. Student.
+
+Allow multiple role assignments where authorised.
+
+### Security requirements
+
+- Secure login.
+- Secure logout.
+- Password hashing.
+- Password reset.
+- Email or phone verification where configured.
+- Optional multi-factor authentication.
+- Session expiration.
+- Account lockout or throttling.
+- Role-based permissions.
+- Permission-based action controls.
+- School and campus restrictions.
+- Secure session cookies.
+- CSRF protection.
+- Login rate limiting.
+- Account deactivation.
+- Session invalidation.
+- Access logging.
+
+IMPORTANT:
+
+Do not rely on hiding buttons in JavaScript as a security measure.
+
+Every protected action must also be validated on the backend.
+
+Implement least-privilege access and deny-by-default policies.
+
+Test unauthorised access through direct API requests, not just the visible interface.
+
+# 8. MULTI-SCHOOL AND MULTI-CAMPUS ARCHITECTURE
+
+Feature IDs: PLAT-008 and SET-007.
+
+Design the application so it can eventually serve multiple schools without exposing data between them.
+
+Required capabilities:
+
+- School registration/provisioning.
+- School-specific settings.
+- School-specific branding.
+- Campus management.
+- School-scoped users.
+- School-scoped students.
+- School-scoped financial records.
+- School-scoped reporting.
+- Independent school configurations.
+- Secure tenant data isolation.
+
+A user belonging to one school must not be able to access another school's records unless explicitly authorised by the platform.
+
+If multi-school SaaS deployment is not required for the first release, implement the data architecture so it can be enabled without a complete redesign.
+
+# 9. DATABASE DESIGN
+
+Feature ID: DATA-001.
+
+Design a normalised relational database.
+
+At minimum, plan and implement appropriate entities for:
+
+- Schools.
+- Campuses.
+- Users.
+- Roles.
+- Permissions.
+- Role assignments.
+- Academic years.
+- Terms.
+- Calendars.
+- Applicants.
+- Applications.
+- Admission documents.
+- Students.
+- Guardians.
+- Student-guardian relationships.
+- Classes.
+- Streams.
+- Subjects.
+- Teacher allocations.
+- Attendance sessions.
+- Attendance entries.
+- Staff.
+- Employment records.
+- Leave applications.
+- Assessments.
+- Grading scales.
+- Student marks.
+- Published results.
+- Report cards.
+- Timetables.
+- Periods.
+- Rooms.
+- Lessons.
+- Fee structures.
+- Invoices.
+- Invoice lines.
+- Payments.
+- Payment allocations.
+- Receipts.
+- Refunds.
+- Messages.
+- Recipients.
+- Delivery attempts.
+- Communication consent.
+- Books.
+- Book copies.
+- Loans.
+- Reservations.
+- Fines.
+- Vehicles.
+- Drivers.
+- Routes.
+- Student transport allocations.
+- Trips.
+- Boarding houses.
+- Rooms and beds.
+- Boarding allocations.
+- Roll calls.
+- Welfare incidents.
+- Events.
+- Event registrations.
+- Consents.
+- Inventory items.
+- Assets.
+- Stock movements.
+- Suppliers.
+- Purchase orders.
+- Audit events.
+- Files.
+- Notifications.
+- Import jobs.
+- Export jobs.
+
+### Database engineering requirements
+
+- Primary keys.
+- Foreign keys.
+- Unique constraints.
+- Indexes.
+- Appropriate data types.
+- Referential integrity.
+- Soft deletion or archival where appropriate.
+- Created and updated timestamps.
+- Transactional operations.
+- Versioned migrations.
+- Seed data for development only.
+
+Implement proper relationships instead of saving multiple unrelated values in one unstructured field.
+
+Preserve historical school records.
+
+Do not permanently delete financial or important academic records when they should be archived or reversed.
+
+# 10. CROSS-CUTTING SECURITY, PRIVACY AND DATA REQUIREMENTS
+
+Feature IDs: SEC-001 to SEC-005 and DATA-001 to DATA-005.
+
+Implement security as a shared platform capability.
+
+### Security
+
+- HTTPS in production.
+- Secure password hashing.
+- SQL injection prevention.
+- XSS prevention.
+- CSRF protection.
+- Secure authentication sessions.
+- Server-side authorisation.
+- File upload validation.
+- Secure document access.
+- Secret management.
+- API rate limiting.
+- Audit logging.
+- Secure error handling.
+- Dependency security management.
+
+### Privacy
+
+Student, parent, staff, medical, financial and safeguarding information must be appropriately protected.
+
+Implement:
+
+- Data classification.
+- Purpose limitation.
+- Restricted access.
+- Retention policies.
+- Privacy notices.
+- Consent handling where applicable.
+- Secure deletion procedures.
+- Access history.
+- Data export procedures.
+- Incident response procedures.
+
+Never expose sensitive information in debugging output, application logs, URLs or public file directories.
+
+### Audit logging
+
+Record important activities, including:
+
+- Logins and failed logins.
+- Profile changes.
+- Student record modifications.
+- Attendance corrections.
+- Examination result changes.
+- Financial transactions.
+- Refunds.
+- User permission changes.
+- Data exports.
+- Sensitive document access.
+- Administrative configuration changes.
+
+Audit entries must identify the actor, date/time, affected record and relevant action details.
+
+Restrict alteration of audit records.
+
+# 11. EXTERNAL INTEGRATIONS
+
+Feature IDs: INT-001 to INT-008.
+
+Create a modular integration layer.
+
+Do not hardcode third-party provider logic into unrelated business modules.
+
+### SMS
+
+Support an approved SMS provider with:
+
+- Message sending.
+- Sender identity.
+- Delivery callbacks.
+- Failed message tracking.
+- Retry handling.
+- Cost controls.
+- Recipient consent.
+
+### Email
+
+Support:
+
+- Admissions notifications.
+- Receipts.
+- Report cards.
+- Announcements.
+- Password recovery.
+- General school notices.
+- Delivery and bounce tracking.
+
+### Payments
+
+Design provider adapters for approved mobile money, bank and card payment channels.
+
+Support:
+
+- Payment references.
+- Provider callbacks.
+- Signature verification.
+- Duplicate callback prevention.
+- Reconciliation.
+- Refund workflows.
+- Transaction history.
+
+Never trust a payment amount or success status supplied only by the browser.
+
+### Other integrations
+
+Prepare optional integration interfaces for:
+
+- Accounting systems.
+- Google/Microsoft identity providers.
+- Transport GPS.
+- Attendance devices.
+- Private document storage.
+
+Where actual API credentials are unavailable, implement the integration architecture, sandbox configuration and testing instructions.
+
+Clearly identify integrations that still need real credentials or provider approval.
+
+Never claim a live integration is functional until an actual provider test succeeds.
+
+# 12. NON-FUNCTIONAL REQUIREMENTS
+
+Use the following requirements as measurable quality gates.
+
+### Performance — NFR-003
+
+Proposed target: Common dashboard and module screens should load within three seconds under the agreed school data volume and network conditions.
+
+Optimise:
+
+- Database queries.
+- API requests.
+- Search.
+- Tables.
+- Pagination.
+- Images.
+- Asset loading.
+- Caching.
+
+### Availability — NFR-004
+
+Proposed initial service availability target: 99.5% monthly, excluding agreed maintenance.
+
+Document the hosting provider's actual service commitment and monitoring.
+
+### Backup and disaster recovery — NFR-005
+
+Implement:
+
+- Automated database backups.
+- Encrypted backups.
+- Backup retention.
+- Off-site backup storage.
+- Restore procedures.
+- Restore tests.
+- Recovery documentation.
+
+Agree recovery point objective (RPO) and recovery time objective (RTO) with the school.
+
+A backup process is not complete until restoration has been successfully tested.
+
+### Accessibility — NFR-006
+
+Target WCAG 2.2 AA principles.
+
+Include:
+
+- Keyboard navigation.
+- Visible focus states.
+- Accessible forms.
+- Proper labels.
+- Sufficient contrast.
+- Screen-reader-friendly structure.
+- Meaningful validation feedback.
+- Accessible modal handling.
+
+### Responsive design — NFR-007
+
+Test desktop, tablets and common smartphones.
+
+All core school workflows must be usable on mobile.
+
+### Browser compatibility — NFR-008
+
+Test current agreed versions of:
+
+- Chrome.
+- Edge.
+- Firefox.
+- Safari.
+
+### Scalability — NFR-009
+
+Support agreed student numbers, staff records, financial transactions and concurrent users.
+
+Use database indexes, pagination and efficient queries.
+
+### Reliability — NFR-010
+
+Prevent:
+
+- Duplicate payments.
+- Duplicate student admissions.
+- Double room allocations.
+- Double bookings.
+- Lost updates.
+- Incomplete financial transactions.
+- Incorrect inventory balances.
+
+Use database transactions and appropriate concurrency controls.
+
+### Localization — NFR-014
+
+Default timezone: `Africa/Kampala`.
+
+Support configurable:
+
+- Currency.
+- Date formats.
+- Academic calendars.
+- Time display.
+- Number formatting.
+
+Use UGX as the initial currency default if confirmed by the school.
+
+### Maintainability and observability
+
+Implement structured logs, monitoring, actionable errors, documented APIs, automated tests and maintainable modules.
+
+Do not allow sensitive student or finance information to leak into logs.
+
+# 13. APPLICATION WORKFLOWS AND DATA INTEGRITY
+
+All modules must work as one connected application.
+
+Implement and test the following end-to-end workflows.
+
+### Workflow A: Student admission
+
+Public application → Application review → Interview where required → Approval → Student record creation → Guardian linking → Class allocation → Fee invoice creation where configured → Admission notification.
+
+### Workflow B: Academic operations
+
+Academic year setup → Term creation → Class setup → Subjects → Teacher allocation → Timetable → Attendance → Assessment → Marks → Moderation → Approval → Result publication → Report card generation.
+
+### Workflow C: Student finance
+
+Fee structure → Invoice generation → Payment reference → Payment receipt → Payment allocation → Balance calculation → Parent statement → Financial reconciliation.
+
+### Workflow D: Attendance
+
+Class selection → Attendance session → Student marking → Submission → Database persistence → Attendance analytics → Absence notification → Parent portal visibility where permitted.
+
+### Workflow E: Library
+
+Book registration → Copy registration → Borrowing → Due-date calculation → Return → Fine assessment where applicable → Loan history.
+
+### Workflow F: Boarding
+
+House setup → Room setup → Bed setup → Student allocation → Roll call → Leave request → Approval → Check-out/check-in → Guardian notification.
+
+### Workflow G: Inventory
+
+Supplier registration → Requisition → Purchase approval → Goods received → Stock movement → Asset assignment → Maintenance → Stocktake.
+
+### Workflow H: Communication
+
+Message creation → Audience selection → Permission and consent checks → Queue → Provider delivery → Delivery callback → Status history → Reporting.
+
+Every workflow must be tested from beginning to end.
+
+Do not build disconnected pages that only display records without updating related modules correctly.
+
+# 14. DATA IMPORT, EXPORT AND MIGRATION
+
+Feature IDs: DATA-003 and RPT-001 to RPT-004.
+
+Build data migration capabilities.
+
+Support:
+
+- Student imports.
+- Guardian imports.
+- Staff imports.
+- Academic records imports.
+- Fee records imports where migration is approved.
+- Inventory imports.
+- CSV exports.
+- Excel imports where supported.
+- PDF reports.
+- JSON backups.
+
+Import requirements:
+
+1. Upload file.
+2. Validate file type and structure.
+3. Preview records.
+4. Validate required fields.
+5. Identify duplicates.
+6. Show row-specific errors.
+7. Confirm import.
+8. Process import safely.
+9. Produce import summary.
+10. Record import history.
+
+Never silently import invalid data.
+
+Never overwrite existing production data without explicit confirmation and a recoverable backup.
+
+# 15. PROJECT QUALITY ASSURANCE AND AUTOMATED TESTING
+
+Feature ID: OPS-001.
+
+Implement proper testing at all levels.
+
+### Unit testing
+
+Test business logic including:
+
+- Admission conversion.
+- Student number generation.
+- Fee calculations.
+- Payment allocation.
+- Grade calculations.
+- Attendance percentage calculations.
+- Timetable conflict detection.
+- Library stock calculations.
+- Transport capacity.
+- Boarding occupancy.
+- Inventory movements.
+
+### Integration testing
+
+Test:
+
+- APIs.
+- Database relationships.
+- Authentication.
+- Permissions.
+- File uploads.
+- Notifications.
+- Payment integrations.
+- Report generation.
+- Background jobs.
+
+### End-to-end testing
+
+Test the complete workflows from the user interface.
+
+### Mandatory acceptance tests
+
+Use the Development Tracker QA register, QA-001 to QA-018, as the minimum testing suite.
+
+In particular:
+
+- QA-001: All 17 modules navigate correctly; direct routes, browser back and refresh work.
+- QA-002: Responsive layout.
+- QA-003: Create, view, edit and delete workflows.
+- QA-004: Validation and error handling.
+- QA-005: Authorisation and role restrictions.
+- QA-006: Admission conversion without duplicate students.
+- QA-007: Attendance persistence and reporting.
+- QA-008: Examination grading, moderation and publishing.
+- QA-009: Timetable conflict detection.
+- QA-010: Finance reconciliation and duplicate payment protection.
+- QA-011: Communication delivery, consent and retries.
+- QA-012: Library loans and returns.
+- QA-013: Transport and boarding capacity.
+- QA-014: Inventory movement and stock integrity.
+- QA-015: Reports and exports.
+- QA-016: Backup and restore.
+- QA-017: Security and privacy.
+- QA-018: Performance, recovery and concurrency.
+
+Do not mark a test passed without executing it.
+
+Fix all critical and high-severity defects before production acceptance.
+
+# 16. DEVELOPMENT TRACKING AND FEATURE COMPLETION
+
+Use the exact feature IDs from the Development Tracker.
+
+Do not remove, rename or ignore the feature IDs.
+
+For every feature, track:
+
+- Feature ID.
+- Description.
+- Current baseline.
+- Implementation status.
+- Backend status.
+- Database status.
+- UI status.
+- Permission status.
+- Test status.
+- Owner.
+- Dependencies.
+- Outstanding issues.
+- Evidence.
+- Completion date.
+
+Use these statuses:
+
+- TODO.
+- IN PROGRESS.
+- IMPLEMENTED.
+- TESTING.
+- BLOCKED.
+- DONE.
+- DEFERRED.
+
+A feature is only DONE when its agreed production acceptance criteria have passed.
+
+A working visual component alone is not sufficient.
+
+A feature must have appropriate frontend behaviour, server-side validation, persistent storage, access controls, error handling and tests.
+
+Maintain a `DEVELOPMENT_TRACKER.md` file in the repository and update it as implementation progresses.
+
+# 17. REQUIRED DEVELOPMENT APPROACH
+
+Work in controlled phases.
+
+Do not attempt an uncontrolled rewrite of the entire application.
+
+## PHASE 0 — AUDIT AND DISCOVERY
+
+- Inspect all project files.
+- Inspect the Development Tracker.
+- Identify missing features.
+- Identify incomplete code.
+- Map sidebar links to existing module renderers.
+- Review data structures.
+- Check existing dependencies.
+- Identify deployment constraints.
+- Identify assumptions and school-policy decisions.
+
+Deliver an audit report and implementation plan.
+
+Proceed with safe, documented assumptions rather than stopping for nonessential questions.
+
+## PHASE 1 — PRODUCTION FOUNDATION
+
+Implement:
+
+- Backend architecture.
+- Database.
+- Migrations.
+- Models.
+- Authentication.
+- Password recovery.
+- Role-based permissions.
+- School/campus scoping.
+- API.
+- Audit logging.
+- Secure file storage.
+- Backup procedures.
+- Environment configuration.
+
+Do not load real school data until the security and backup foundation has been tested.
+
+## PHASE 2 — CORE SCHOOL RECORDS
+
+Implement:
+
+- Admissions.
+- Students.
+- Guardians.
+- Staff.
+- Academics.
+- Class and subject allocation.
+- Student imports.
+- Data migration tools.
+
+## PHASE 3 — DAILY ACADEMIC OPERATIONS
+
+Implement:
+
+- Attendance.
+- Examinations.
+- Grading.
+- Result approval.
+- Report cards.
+- Timetable.
+- Academic reporting.
+
+## PHASE 4 — FINANCE AND COMMUNICATION
+
+Implement:
+
+- Fee structures.
+- Billing.
+- Payments.
+- Receipts.
+- Reconciliation.
+- Finance approvals.
+- SMS.
+- Email.
+- In-app notifications.
+
+## PHASE 5 — SCHOOL SERVICES AND PORTALS
+
+Implement:
+
+- Library.
+- Transport.
+- Boarding.
+- Events.
+- Inventory.
+- Parent portal.
+- Student portal.
+- Teacher portal.
+
+## PHASE 6 — REPORTING, HARDENING AND LAUNCH
+
+Implement:
+
+- Management reports.
+- Analytics.
+- PDF exports.
+- Automated testing.
+- Performance optimisation.
+- Accessibility testing.
+- Security testing.
+- Backup restoration.
+- Monitoring.
+- User training.
+- Deployment.
+- Final school acceptance.
+
+Each phase must have its own implementation and testing evidence.
+
+# 18. USER EXPERIENCE AND EFFICIENCY REQUIREMENTS
+
+Build the system around real school users.
+
+Do not make staff navigate through several screens to perform simple routine tasks unnecessarily.
+
+Implement:
+
+- Global search.
+- Quick actions.
+- Command navigation.
+- Reusable forms.
+- Reusable data tables.
+- Filters.
+- Bulk operations.
+- Pagination.
+- Clear notifications.
+- Context-sensitive actions.
+- Confirmation before destructive operations.
+- Printable records.
+- Useful dashboards.
+- Role-specific shortcuts.
+
+Use sensible default filters such as current academic year and active term.
+
+Avoid requiring users to enter information that already exists in the system.
+
+Use linked dropdowns and searchable selectors for students, guardians, classes, teachers, subjects and financial records.
+
+Make frequently used actions accessible without unnecessary navigation.
+
+# 19. DOCUMENTATION AND PROJECT DELIVERABLES
+
+The final project must include complete source code and technical documentation.
+
+Deliver the following:
+
+### Application source
+
+- Complete frontend.
+- Complete backend.
+- Database migrations.
+- Models.
+- Controllers.
+- Services.
+- API routes.
+- Middleware.
+- Authentication.
+- Permission configuration.
+- Validation.
+- Integration adapters.
+- Background jobs.
+- Tests.
+- Assets.
+
+### Documentation
+
+1. `README.md` — professional project introduction and setup instructions.
+2. `DEVELOPMENT_TRACKER.md` — feature-by-feature implementation status.
+3. `ARCHITECTURE.md` — complete application architecture.
+4. `DATABASE_DESIGN.md` — database entities and relationships.
+5. `API_DOCUMENTATION.md` — API routes, request/response formats and authentication.
+6. `SECURITY.md` — authentication, permissions, privacy and security controls.
+7. `DEPLOYMENT.md` — local, staging and production deployment.
+8. `BACKUP_AND_RESTORE.md` — backup and recovery instructions.
+9. `USER_GUIDE.md` — administrator and department user instructions.
+10. `TESTING.md` — testing instructions and results.
+11. `CHANGELOG.md` — implementation and release history.
+12. `.env.example` — required environment variables without real secrets.
+
+Provide a database installation and migration guide.
+
+Provide safe initial administrator provisioning.
+
+Never commit production credentials or default administrative passwords.
+
+# 20. PRODUCTION DEPLOYMENT REQUIREMENTS
+
+Prepare the application for deployment.
+
+Support:
+
+- Local development.
+- Staging.
+- Production.
+
+Implement:
+
+- Environment-specific configuration.
+- HTTPS.
+- Database migrations.
+- Secure session configuration.
+- Error logging.
+- Monitoring.
+- Automated backups.
+- Restore procedures.
+- Production asset handling.
+- Deployment documentation.
+- Rollback procedures.
+
+Ensure production errors do not expose internal code, database credentials or sensitive user information.
+
+Do not use debug mode in production.
+
+Do not expose development test accounts in the live environment.
+
+Verify that the application works on the actual target hosting environment before declaring deployment readiness.
+
+# 21. STRICT IMPLEMENTATION RULES
+
+These requirements are mandatory.
+
+1. Do not deliver only a dashboard or UI mock-up.
+2. Do not generate isolated screens without connecting their workflows.
+3. Do not replace working features without understanding their current implementation.
+4. Do not hardcode school statistics in production.
+5. Do not use localStorage as the production database.
+6. Do not place business rules exclusively in frontend JavaScript.
+7. Do not use fake payment confirmations.
+8. Do not simulate real SMS or email delivery.
+9. Do not expose sensitive student information.
+10. Do not rely on frontend-only permission checks.
+11. Do not create duplicate student records during admissions conversion.
+12. Do not allow duplicate financial transactions.
+13. Do not permit invalid timetable allocations.
+14. Do not allow negative inventory quantities.
+15. Do not allow duplicate boarding bed allocations.
+16. Do not make destructive changes without appropriate confirmation and audit history.
+17. Do not leave major production actions as empty buttons.
+18. Do not insert dummy production data.
+19. Do not report tests as passed when they have not been executed.
+20. Do not claim the application is production-ready when unresolved blockers remain.
+
+When external credentials, provider accounts or school-specific decisions are unavailable, implement the appropriate architecture and clearly identify the remaining dependency.
+
+Do not invent successful external connections.
+
+# 22. FINAL ACCEPTANCE CRITERIA
+
+The application will only be considered ready for production when the following conditions have been met.
+
+### Functional completion
+
+- All 17 main application destinations work.
+- All required features from the Development Tracker are implemented or explicitly approved for deferral.
+- All required user portals function.
+- Core school workflows are integrated.
+- Data is persisted in the database.
+- Reports produce accurate information.
+- All relevant permissions are enforced.
+
+### Technical completion
+
+- Backend is operational.
+- Database is configured.
+- Migrations run successfully.
+- APIs work correctly.
+- Authentication is secure.
+- Database relationships are valid.
+- Error handling works.
+- Integrations are tested or accurately identified as awaiting external setup.
+
+### Security completion
+
+- No unresolved critical/high security findings.
+- Permissions are tested.
+- Sensitive records are protected.
+- File uploads are secure.
+- Audit logging works.
+- Backups are encrypted and restorable.
+- Production configuration is secure.
+
+### Quality completion
+
+- Automated tests pass.
+- QA-001 to QA-018 are executed and recorded.
+- Responsive layouts work.
+- Accessibility has been checked.
+- Performance has been measured.
+- No critical/high defects remain open.
+
+### Operational completion
+
+- Production deployment instructions are complete.
+- Backup and restore are verified.
+- Monitoring is operational.
+- User documentation is available.
+- School representatives complete user acceptance testing.
+- Final release approval is documented.
+
+**Do not assign yourself a 100% completion score without evidence against these criteria.**
+
+A feature blocked by a missing external payment account, provider credential or school approval must be identified separately rather than marked as completed.
+
+# 23. FINAL RESPONSE AND HANDOVER FORMAT
+
+After implementing the application, provide a professional development handover report containing:
+
+**A. Project overview**
+
+Summarise the existing code reviewed and the architecture implemented.
+
+**B. Features implemented**
+
+Provide a module-by-module summary covering all 17 application destinations and the additional portals.
+
+**C. Development Tracker**
+
+Report every feature ID and its actual completion status.
+
+**D. Database**
+
+Summarise the database structure, relationships, migrations and seed data.
+
+**E. Authentication and security**
+
+Explain the roles, permissions, authentication methods and security controls.
+
+**F. Integrations**
+
+List each integration and distinguish between live, sandbox-tested, mock-only and awaiting credentials.
+
+**G. Testing results**
+
+Provide actual results for unit, integration, end-to-end, security, performance and QA acceptance tests.
+
+**H. Outstanding work**
+
+Identify every unresolved requirement, dependency, limitation and school decision.
+
+**I. Installation**
+
+Provide exact setup instructions for local development.
+
+**J. Production deployment**
+
+Provide the deployment process, required environment variables, database configuration and backup procedure.
+
+**K. Final project delivery**
+
+Provide the complete project directory and a downloadable ZIP containing all implemented source code and documentation.
+
+---
+
+# FINAL DIRECTIVE
+
+Treat DPSI School Manager as a serious commercial school management product that must be capable of supporting the actual operations of a school.
+
+Your responsibility is not simply to make the application look impressive.
+
+Your responsibility is to make it reliable, intuitive, secure, interconnected, maintainable and genuinely useful to the people who operate a school every day.
+
+Preserve the approved DPSI dashboard visual direction.
+
+Implement the full functional scope of the supplied Development Tracker.
+
+Make every module work with the same database, authentication system, permissions framework and shared application architecture.
+
+Prioritise data integrity, security, ease of use and real-world operational workflows.
+
+Work systematically, inspect your changes, execute tests, fix errors and update the documentation as the project evolves.
+
+**Do not stop at planning. Build, integrate, test, document and deliver the complete application.**
+
+The final outcome must be a professionally engineered school management platform that can be demonstrated to school leadership, evaluated by real users, deployed securely and maintained as a commercial software product.
+
+Begin with the complete project audit, then proceed through the implementation phases until all agreed production release gates have been satisfied.
+My three most important recommendations
+1. Prioritise the backend foundation first. Authentication, permissions, database relationships, audit logs and backups must be reliable before real student and financial information is introduced.
+
+2. Pay special attention to finance and examinations. Incorrect fee balances or examination results can seriously affect school operations. These modules need rigorous business-rule validation and reconciliation.
+
+3. Build for multiple schools from the beginning. Even when DPSI is the first deployment, a properly isolated school architecture will make it much easier to offer the product to other schools later.
+
+The key distinction is that you are building both a school operations product and a potential commercial software offering. Its value will come from reliable interconnected workflows, not simply the number of menu items.
+END OF MASTER DEVELOPMENT PROMPT.
